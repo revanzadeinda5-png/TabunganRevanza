@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f6f1">
+  <title>TabungYuk — Pelan-pelan jadi nyata</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="TabungYuk, beranda">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span>tabung<span class="brand-accent">yuk</span></span>
+      </a>
+      <div class="topbar-note"><span class="sparkle" aria-hidden="true">✦</span> Sedikit demi sedikit, lama-lama tercapai.</div>
+      <div class="avatar" aria-label="Profil kamu">K</div>
+    </header>
+
+    <main>
+      <section class="welcome">
+        <div class="welcome-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> RUANG IMPIANMU</p>
+          <h1>Hai, kamu!<br><span>Siap wujudkan</span> keinginanmu?</h1>
+          <p class="welcome-description">Yuk, mulai menabung untuk hal-hal yang kamu suka. Setiap rupiah membawamu lebih dekat!</p>
+          <a class="primary-button" href="#tambah-target"><span aria-hidden="true">＋</span> Buat target baru</a>
+        </div>
+        <div class="welcome-art" aria-hidden="true">
+          <div class="sun"></div>
+          <div class="art-sparkle sparkle-one">✦</div>
+          <div class="art-sparkle sparkle-two">✧</div>
+          <div class="art-sparkle sparkle-three">✦</div>
+          <div class="coin coin-back">Rp</div>
+          <div class="jar">
+            <div class="jar-lid"></div>
+            <div class="jar-body">
+              <span class="jar-heart">♥</span>
+              <span class="jar-label">IMPIAN</span>
+              <div class="jar-coins"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="coin coin-front">Rp</div>
+          <div class="art-caption">mimpi besar,<br>mulai dari kecil ✨</div>
+        </div>
+      </section>
+
+      <section class="summary-grid" aria-label="Ringkasan tabungan">
+        <article class="summary-card summary-total">
+          <div class="summary-icon icon-lilac" aria-hidden="true">◈</div>
+          <div><p>Total tabunganmu</p><strong id="total-savings">Rp0</strong><span>Semangat, terus kumpulkan!</span></div>
+          <span class="card-decoration" aria-hidden="true">✳</span>
+        </article>
+        <article class="summary-card">
+          <div class="summary-icon icon-peach" aria-hidden="true">♡</div>
+          <div><p>Target impian</p><strong id="goal-count">0 <small>target</small></strong><span>Semua impian berharga</span></div>
+        </article>
+        <article class="summary-card">
+          <div class="summary-icon icon-mint" aria-hidden="true">✓</div>
+          <div><p>Sudah tercapai</p><strong id="completed-count">0 <small>impian</small></strong><span>Kamu hebat banget!</span></div>
+        </article>
+      </section>
+
+      <section class="goals-section" id="daftar-target">
+        <div class="section-heading">
+          <div><p class="eyebrow">LANGKAH KECIL, HASIL BESAR</p><h2>Target impian <span>☁</span></h2></div>
+          <p class="section-caption">Semua yang kamu perjuangkan ada di sini.</p>
+        </div>
+
+        <div class="goal-list" id="goal-list" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state">
+          <div class="empty-illustration" aria-hidden="true">☁<span>♡</span></div>
+          <h3>Belum ada target, nih!</h3>
+          <p>Yuk, tulis barang impianmu dan mulai menabung hari ini.</p>
+          <a class="secondary-button" href="#tambah-target">＋ Tambah target pertama</a>
+        </div>
+      </section>
+
+      <section class="add-section" id="tambah-target">
+        <div class="add-copy">
+          <p class="eyebrow">PUNYA IMPIAN BARU?</p>
+          <h2>Yuk, mulai<br>menabung! <span>✿</span></h2>
+          <p>Tulis targetmu dan lihat tabunganmu tumbuh sedikit demi sedikit.</p>
+          <div class="note"><span aria-hidden="true">✦</span> Nggak harus langsung banyak, yang penting konsisten.</div>
+        </div>
+        <form class="goal-form" id="goal-form">
+          <label for="goal-name">Aku mau menabung untuk...</label>
+          <input id="goal-name" name="name" type="text" maxlength="60" placeholder="Contoh: Tas sekolah baru" required>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="goal-target">Harga barang impian</label>
+              <div class="input-wrap"><span>Rp</span><input id="goal-target" name="target" type="number" min="1" step="1" placeholder="150000" required></div>
+            </div>
+            <div class="form-field">
+              <label for="goal-icon">Pilih ikon</label>
+              <select id="goal-icon" name="icon" aria-label="Pilih ikon target">
+                <option value="🎒">🎒 Sekolah</option>
+                <option value="📚">📚 Buku</option>
+                <option value="✏️">✏️ Alat tulis</option>
+                <option value="👟">👟 Sepatu</option>
+                <option value="🎧">🎧 Gawai</option>
+                <option value="🎁">🎁 Lainnya</option>
+              </select>
+            </div>
+          </div>
+          <button class="primary-button form-submit" type="submit">Simpan targetku <span aria-hidden="true">→</span></button>
+          <p class="form-feedback" id="form-feedback" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer><span class="brand-mark" aria-hidden="true">✳</span> tabungyuk <span>•</span> Mimpi baik dimulai dari langkah kecil.</footer>
+  </div>
+
+  <dialog class="deposit-dialog" id="deposit-dialog" aria-labelledby="deposit-title">
+    <form id="deposit-form" method="dialog">
+      <button class="dialog-close" type="button" aria-label="Tutup">×</button>
+      <div class="dialog-icon" id="deposit-icon" aria-hidden="true">🎒</div>
+      <p class="eyebrow">SATU LANGKAH LAGI!</p>
+      <h2 id="deposit-title">Tambah tabungan</h2>
+      <p class="dialog-description" id="deposit-description"></p>
+      <label for="deposit-amount">Berapa yang mau ditabung?</label>
+      <div class="input-wrap deposit-input"><span>Rp</span><input id="deposit-amount" name="amount" type="number" min="1" step="1" placeholder="10000" required></div>
+      <button class="primary-button form-submit" type="submit">Tambahkan tabungan <span aria-hidden="true">♡</span></button>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
